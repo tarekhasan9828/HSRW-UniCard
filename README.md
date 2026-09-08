@@ -7,6 +7,9 @@ The project answers three questions in order. Can four fragmented campus service
 Project Management and Intercultural Competence · Summer Semester 2026 · Rhine-Waal University of Applied Sciences  
 B.Sc. Mobility and Logistics · Group 6
 
+**Live prototype: https://unicard-hsrw-main-1.vercel.app/portal**
+All identity, balance and service data shown in it is example demonstration data and is not connected to university or partner systems.
+
 ## Results
 
 | Goal | Result | Assessment |
@@ -46,9 +49,13 @@ The original idea also covered credit, lockers, parking and event ticketing. Sco
 
 The architecture is a decoupled API gateway. The UniCard speaks to existing databases through an abstraction layer, so no partner has to rebuild a back end to participate. That decision came directly out of the market analysis: the services already exist and work, what is missing is a single front door to them.
 
+![Decoupled UniCard API architecture](docs/figures/decoupled-api-architecture.jpg)
+
 GDPR/DSGVO handling is built into the gateway rather than bolted on: tokenisation at the API layer, minimised local storage, service data kept compartmentalised, verifiable permissions and full logging.
 
 The prototype covers wallet provisioning, identity and library access, Mensa balance and payment, transit validation and the physical backup path. It runs on simulated demonstration data, because the institutional approvals needed to reach the HSRW, Studierendenwerk and transit databases were never obtained.
+
+![Final UniCard portal screens: student card and profile, library loans, Mensa balance and menu, wallet and NFC](docs/figures/prototype-portal-screens.jpg)
 
 ## Why hybrid
 
@@ -70,6 +77,8 @@ The conclusion that follows from those two numbers is the thesis of the whole pr
 **Stakeholder analysis.** Six groups, mapped on power and interest. Students have high interest and low formal power. University administration, university IT, the Studierendenwerk and the transit partners hold the power, because implementation needs their approval and their interfaces. So students belong in a usability pilot, and the powerful groups need managing closely with a named sponsor secured early.
 
 **Ishikawa root-cause analysis.** The visible symptom is the number of cards. The 6M breakdown traces it to separate registration procedures, incompatible databases, ageing readers, decentralised campus operations and the absence of real-time balance visibility. The Measurement branch was the productive one: it showed that balance and transaction history were nowhere available as a single view, and that gap became a prototype feature.
+
+![Ishikawa 6M root-cause analysis of the fragmented campus experience](docs/figures/ishikawa-root-cause.jpg)
 
 **Risk register.** Rated probability × impact on a 1–5 scale, with 12 the threshold for high priority.
 
@@ -93,9 +102,17 @@ The schedule was built as a six-phase Gantt chart over 474 hours, with work pack
 | Prototyping and architecture | 28 May – 14 Jun 2026 | 68 |
 | Finalisation and documentation | 15 Jun – 2 Aug 2026 | 192 |
 
+![Task-level Gantt chart with work packages, assignees and status](docs/figures/gantt-work-packages.png)
+
+![Gantt calendar timeline from April to August 2026](docs/figures/gantt-timeline.png)
+
 Fourteen activities were estimated three-point and scheduled with PERT, tₑ = (o + 4m + p) / 6 and σ² = ((p − o) / 6)². The critical path runs B–D–H–K–N: problem definition, market analysis, Gantt and timeline planning, prototype development, and final documentation and controlling. Expected length 27 units with variance 2.44, giving roughly 50 % confidence at 27 units, 90 % at 29 and 97 % at 30. Prototype development carried the largest variance and therefore needed the tightest schedule control.
 
+![Activity network with the critical path B-D-H-K-N highlighted](docs/figures/pert-network-critical-path.png)
+
 Planned against actual, the interesting number is not the 34-hour overrun but its distribution. Prototyping underran by 127 hours because live integration never happened, while final documentation overran by 112 hours. The totals almost cancel and hide two large estimation errors in opposite directions.
+
+![Actual hours per team member, 117 to 119 hours](docs/figures/workload-per-member.png)
 
 ## Usability testing
 
@@ -130,7 +147,7 @@ The project follows a standard project-management sequence: goal definition, pro
 - Malcolm, D. G., Roseboom, J. H., Clark, C. E., & Fazar, W. (1959). Application of a technique for research and development program evaluation. *Operations Research*, 7(5), 646–669.
 - Wheelen, T. L., & Hunger, J. D. (2012). *Strategic Management and Business Policy* (13th ed.). Pearson.
 
-The written project report, the kick-off and interim presentations and the analysis workbooks are not published here, because they carry the group members' personal university details. The results, tables and reasoning they contain are reproduced in this README. The documents themselves are available on request.
+The written project report, the kick-off and interim presentations and the analysis workbooks are not published here, because they carry the group members' personal university details. The results, tables and reasoning they contain are reproduced in this README, and the figures they contain are in docs/figures. The documents themselves are available on request.
 
 ## Authors
 
