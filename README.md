@@ -4,7 +4,7 @@ A hybrid student credential that merges student identification, Mensa payment, l
 
 The project answers three questions in order. Can four fragmented campus services be consolidated without replacing anyone's back end? What does that consolidation have to look like for students who live on their phone and for students who cannot rely on one? And what actually stops such a system from reaching the campus? The first two were answered with a working prototype and an integration architecture. The third turned out to be the real finding.
 
-Project Management and Intercultural Competence · Summer Semester 2026 · Rhine-Waal University of Applied Sciences
+Project Management and Intercultural Competence · Summer Semester 2026 · Rhine-Waal University of Applied Sciences  
 B.Sc. Mobility and Logistics · Group 6
 
 ## Results
